@@ -4,7 +4,9 @@
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.AspNetCore.Http.Authentication
 
-@model Dsms.Areas.DME001.ViewModels.DME001_001ViewModel
+@model Dsms.ViewModels.DME001_001ViewModel
+@using Dsms.Controllers
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
 
 @{
     ViewData["Title"] = "ログイン";
@@ -20,30 +22,28 @@
         </div>
     </div>
     <!--システムメンテンス中-->
-    <div class="alert alert-danger">
-        システムメンテナンス中です。
-    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
     <!--ユーザID・パスワード入力フォーム-->
-    <form method="post" action="" role="form" class="form-horizontal needs-validation" novalidate>
+    <form class="form-horizontal needs-validation" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="form-group row">
                     <div class="col-md-2 col-lg-2"></div>
-                    <label for="userid" class="control-label col-md-2 col-lg-2"><b>ユーザーID</b></label>
+                    <label asp-for="UserCd" class="control-label col-md-2 col-lg-2"></label>
                     <div class="form-inline">
-                        <input class="form-control" id="userid" required>
+                        <input asp-for="UserCd" class="form-control" />
                         <div class="invalid-feedback">
-                            ユーザーIDが入力されていません
+                            <span asp-validation-for="UserCd" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-2 col-lg-2"></div>
-                    <label for="password" class="control-label col-md-2 col-lg-2"><b>パスワード</b></label>
+                    <label asp-for="Password" class="control-label col-md-2 col-lg-2"></label>
                     <div class="form-inline">
-                        <input class="form-control" id="password" required>
+                        <input asp-for="Password" class="form-control" />
                         <div class="invalid-feedback">
-                            パスワードが入力されていません
+                            <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,13 @@
         <!--ログインボタン-->
         <div class="row form-group">
             <div class="col-md-4 col-lg-4"></div>
-            <button type="submit" class="btn btn-primary">ログイン</button>
+            <button 
+                type="submit"
+                asp-area="DME001"
+                asp-controller="DME001_001"
+                asp-action="Login" 
+                class="btn btn-primary"
+            >ログイン</button>
         </div>
     </form>
     <!--モーダル-->

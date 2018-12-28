@@ -9,21 +9,40 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Rewrite;
+
+using Dsms.Model;
 
 namespace Dsms
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        //public Startup(IConfiguration configuration)
+        //{
 
+        //    Configuration = configuration;
+        //}
+        public Startup(IHostingEnvironment env)
+        {
+
+            //構成ファイル、環境変数等から、構成情報をロード
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+
+            //構成情報をプロパティに設定
+            Configuration = builder.Build();
+        }
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Configurationをシングルトン化
+            services.AddSingleton<IConfiguration>(Configuration);
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -39,6 +58,8 @@ namespace Dsms
                 options.AreaViewLocationFormats.Add("/Areas/{2}/Views/{1}.cshtml");
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //構成情報から、UserSettings クラスへバインド
+            services.Configure<Connectioninfo>(this.Configuration.GetSection("Connectioninfo"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,12 +82,12 @@ namespace Dsms
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "default",
+                    template: "{area}/{controller}/{action}",
+                    defaults: new { area = "DME001", controller = "DME001_001", action = "Init" });
+                routes.MapRoute(
                     name: "areaRoute",
                     template: "{area=DME001}/{controller=DME001_001}/{action=Init}/{id?}");
-
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=DME001}/{action=Init}/{id?}");
             });
         }
     }
