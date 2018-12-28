@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\DMT002\" />
+    <Folder Include="Areas\DMM003\" />
+    <Folder Include="Areas\DMM004\" />
+    <Folder Include="Areas\DMM005\" />
+    <Folder Include="Areas\DMM006\" />
+    <Folder Include="Areas\DMM007\" />
+    <Folder Include="Areas\DMM008\" />
+    <Folder Include="Areas\DMM009\" />
+    <Folder Include="Areas\DMT010\" />
+    <Folder Include="wwwroot\lib\bootstrap\" />
+  </ItemGroup>
+
+</Project>

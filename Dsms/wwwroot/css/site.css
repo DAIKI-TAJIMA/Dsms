@@ -1,0 +1,77 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+/*êVãKí«â¡*/
+.bg-sentsu {
+    background-color: #004f7d !important;
+}
+
+/*êVãKí«â¡ ÉvÉåÉCÉäÉXÉg*/
+.btn-primary-copy {
+    color: #fff;
+    background-color: #66cdaa;
+}
+
+.btn-primary-change {
+    color: #fff;
+    background-color: #000000;
+}
+
+.btn-primary-delete {
+    color: #fff;
+    background-color: #b22222;
+}
+
+.form-control-kokoku {
+    width: 18%;
+    color: #495057;
+    background-color: #fff;
+    text-align: center;
+    top: 0%;
+    margin-top: 0.5rem;
+}
+
+/*êVãKí«â¡ ãŸã}èÓïÒìoò^*/
+.btn-primary-teishi {
+    color: #000000;
+    background-color: #fff;
+    border-top: solid 2px #000000;
+    border-right: solid 2px #000000;
+    border-bottom: solid 2px #000000;
+    border-left: solid 2px #000000;
+}
