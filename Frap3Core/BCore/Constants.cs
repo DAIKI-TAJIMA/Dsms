@@ -33,7 +33,11 @@ namespace Frap3Core.BCore
         /// <summary>
         /// PostgreSQL
         /// </summary>
-        PostgreSQL = 4
+        PostgreSQL = 4,
+        /// <summary>
+        /// MySQL
+        /// </summary>
+        MySQL = 5
     }
 
     /// <summary>

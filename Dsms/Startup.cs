@@ -11,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Rewrite;
 
-using Dsms.Model;
+using Frap3Core.BCore;
+
+using Dsms.Business;
 
 namespace Dsms
 {
@@ -59,7 +61,7 @@ namespace Dsms
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             //構成情報から、UserSettings クラスへバインド
-            services.Configure<Connectioninfo>(this.Configuration.GetSection("Connectioninfo"));
+            services.Configure<Frap3Core.BCore.ConnectionInfo>(this.Configuration.GetSection("Connectioninfo"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

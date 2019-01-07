@@ -243,6 +243,11 @@ namespace Frap3Core.BCore
                 // PostgreSQLの場合、PostgreSQL用のインスタンスを生成
                 dataAccessHelper = new PostgreSQLDataAccessHelper(connectInfo);
             }
+            else if (connectInfo.DBMS == DBMS.MySQL)
+            {
+                // MySQLの場合、MySQL用のインスタンスを生成
+                dataAccessHelper = new MySQLDataAccessHelper(connectInfo);
+            }
 
             return dataAccessHelper;
         }

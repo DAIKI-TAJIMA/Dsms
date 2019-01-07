@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Dsms.ViewModels;
-using Dsms.Model;
+using Dsms.Business;
 
 namespace Dsms.Controllers
 {
@@ -14,9 +14,9 @@ namespace Dsms.Controllers
         /// <summary>
         /// 接続情報を保持
         /// </summary>
-        private readonly Connectioninfo _connectioninfo = null;
+        private readonly Frap3Core.BCore.ConnectionInfo _connectioninfo = null;
 
-        public DME001_001Controller(IOptions<Connectioninfo> connectioninfo)
+        public DME001_001Controller(IOptions<Frap3Core.BCore.ConnectionInfo> connectioninfo)
         {
             this._connectioninfo = connectioninfo.Value;
         }
@@ -24,6 +24,9 @@ namespace Dsms.Controllers
         public  IActionResult Init()
         {
             DME001_001ViewModel viewModel = new DME001_001ViewModel();
+
+            DME001Business bs = new DME001Business(this._connectioninfo);
+            bs.GetUser();
 
             return View(viewModel);
         }
