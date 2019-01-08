@@ -1,5 +1,7 @@
 ﻿using Frap3Core.BCore;
 
+using Dsms.Resource;
+
 namespace Dsms.Business
 {
     public class ProjectBusinessBase : BusinessBase
@@ -10,6 +12,34 @@ namespace Dsms.Business
         /// ConnectionInfo
         /// </summary>
         protected ConnectionInfo _connectionInfo { get; set; }
+        /// <summary>
+        /// ページから受けとった共通パラメータ
+        /// </summary>
+        private BusinessCommonParams _bcp;
+
+        #endregion
+
+        #region プロパティ
+
+        /// <summary>
+        /// ページから受けとった共通パラメータ
+        /// </summary>
+        ///	<remarks>
+        ///	ページから受けとった共通パラメータを取得
+        ///	<para>作成年月日 2010/04/09</para>
+        ///	<para>作成者 (株)フューチャーイン 鈴木 辰宣</para>
+        ///	<para>修正年月日</para>
+        ///	<para>修正者</para>
+        ///	<para>修正内容</para>
+        ///	</remarks>
+        ///	<value>ページから受けとった共通パラメータ</value>
+        protected BusinessCommonParams BCP
+        {
+            get
+            {
+                return this._bcp;
+            }
+        }
 
         #endregion
 
@@ -26,9 +56,10 @@ namespace Dsms.Business
         ///	<para>修正者</para>
         ///	<para>修正内容</para>
         ///	</remarks>
-        public ProjectBusinessBase(Frap3Core.BCore.ConnectionInfo connectionInfo)
+        public ProjectBusinessBase(Frap3Core.BCore.ConnectionInfo connectionInfo, BusinessCommonParams bcp)
         {
             this._connectionInfo = connectionInfo;
+            this._bcp = bcp;
         }
 
         #endregion

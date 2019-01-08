@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Data.Common;
+using System.Collections.Generic;
 
 using Frap3Core.BCore;
+
+using Dsms.DataAccess;
+using Dsms.Model;
+using Dsms.Resource;
 
 namespace Dsms.Business
 {
@@ -21,28 +26,29 @@ namespace Dsms.Business
         ///	<para>修正内容</para>
         ///	</remarks>
         ///	<value>connectionInfo</value>
-        public DME001Business(Frap3Core.BCore.ConnectionInfo connectionInfo) : base(connectionInfo)
+        public DME001Business(Frap3Core.BCore.ConnectionInfo connectionInfo, BusinessCommonParams bcp) : base(connectionInfo, bcp)
         {
         }
 
         #endregion
 
-        #region ユーザ取得
+        #region ユーザマスタ取得
 
         /// <summary>
-        /// ユーザ取得
+        /// ユーザマスタ取得
         /// </summary>
         ///	<remarks>
-        /// ユーザ取得　※Identityの仕様に準じる
-        ///	<para>作成年月日 2018/04/27</para>
-        /// <para>作成者 (株)フューチャーイン 林隆一</para>
+        /// ユーザマスタ取得
+        ///	<para>作成年月日 2019/01/08</para>
+        /// <para>作成者 (株)フューチャーイン 田島 大輝</para>
         ///	<para>修正年月日</para>
         ///	<para>修正者</para>
         ///	<para>修正内容</para>
         ///	</remarks>
-        /// <param name="userId"></param>
-        /// <returns>AppNhcUser</returns>
-        public void GetUser()
+        /// <param name="cdUser">ユーザコード</param>
+        /// <param name="anPassword">パスワード</param>
+        /// <returns>ユーザマスタモデル</returns>
+        public M_USERModel GetMUser(string cdUser, string anPassword)
         {
             AbstractDataAccessHelper helper = AbstractDataAccessHelper.GetInstance(this._connectionInfo);
 
@@ -52,6 +58,14 @@ namespace Dsms.Business
                 {
                     lock (this.GetType())
                     {
+                        // データクアセスを生成する。
+                        DME001DataAccess da = new DME001DataAccess(con, helper, this.BCP);
+
+                        // ユーザマスタを取得する。
+                        M_USERModel model = da.GetMUser(cdUser, anPassword);
+
+                        // ユーザマスタを返却する。 
+                        return model;
                     }
                 }
                 catch (Exception ex)

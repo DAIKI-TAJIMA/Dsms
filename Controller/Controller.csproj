@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>Dsms.Controller</AssemblyName>
+    <RootNamespace>Dsms.Controller</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\Frap3Core\BCore\BCore.csproj" />
+    <ProjectReference Include="..\Frap3Core\Utility\Utility.csproj" />
+    <ProjectReference Include="..\Resource\Resource.csproj" />
+  </ItemGroup>
+
+</Project>

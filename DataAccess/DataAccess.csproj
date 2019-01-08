@@ -6,4 +6,10 @@
     <RootNamespace>Dsms.DataAccess</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Frap3Core\BCore\BCore.csproj" />
+    <ProjectReference Include="..\Model\Model.csproj" />
+    <ProjectReference Include="..\Resource\Resource.csproj" />
+  </ItemGroup>
+
 </Project>

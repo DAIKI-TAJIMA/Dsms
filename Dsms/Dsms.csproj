@@ -9,14 +9,17 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\DMM005\Controllers\" />
+    <Folder Include="Areas\DMM005\Views\" />
+    <Folder Include="Areas\DMM005\ViewModels\" />
     <Folder Include="Areas\DMT002\" />
     <Folder Include="Areas\DMM003\" />
     <Folder Include="Areas\DMM004\" />
-    <Folder Include="Areas\DMM005\" />
     <Folder Include="Areas\DMM006\" />
     <Folder Include="Areas\DMM007\" />
     <Folder Include="Areas\DMM008\" />
@@ -27,8 +30,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj" />
+    <ProjectReference Include="..\Controller\Controller.csproj" />
+    <ProjectReference Include="..\Filter\Filter.csproj" />
     <ProjectReference Include="..\Frap3Core\BCore\BCore.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
+    <ProjectReference Include="..\Resource\Resource.csproj" />
   </ItemGroup>
 
 </Project>

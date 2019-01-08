@@ -52,6 +52,18 @@ namespace Dsms
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // ASP.NET Core MVCÇ≈Sessionä«óù
+            // In-Memory
+            services.AddDistributedMemoryCache();
+            //services.AddSession();
+            services.AddSession(options =>
+            {
+                //options.Cookie.HttpOnly = true;
+                //options.Cookie.Name = ".Fiver.Session";
+                //options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+                options.IdleTimeout = TimeSpan.FromMinutes(1);
+            });
+
             services.AddMvc().AddRazorOptions(options =>
             {
                 // {0} - Action Name
@@ -67,6 +79,9 @@ namespace Dsms
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // ASP.NET Core MVCÇ≈Sessionä«óù
+            app.UseSession();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
