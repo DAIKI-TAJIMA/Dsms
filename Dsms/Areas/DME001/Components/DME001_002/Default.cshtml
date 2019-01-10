@@ -1,0 +1,42 @@
+﻿@using Dsms.ViewModels
+@model DME001_002ViewModel
+
+    <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">パスワード照会</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="card bg-light text-dark">
+                        <div class="card-body">
+                            <p>パスワードを照会します。</p>
+                            <p>ユーザIDを入力して「次へ」ボタンを押下してください。</p>
+                            <p>(登録されたメールアドレスにパスワード再発行手続きのメールを送信します)</p>
+                        </div>
+                    </div>
+                </div>
+                @*<form method="post" action="" class="form-horizontal" role="form">
+                    <div class="form-group row">
+                        <div class="col-md-1 col-lg-1"></div>
+                            <div class="col-md-3 col-lg-2 form-inline">
+                                <label asp-for="UserCd" class="control-label"></label>
+                            </div>
+                            <div class="col-md-5">
+                                <input asp-for="UserCd" class="form-control" />
+                                <div class="invalid-feedback">
+                                    <span asp-validation-for="UserCd" class="text-danger"></span>
+                                </div>
+                            </div>
+                    </div>
+                </form>*@
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">&nbsp;次へ&nbsp;</button>
+                    <button type="button" class="btn" data-dismiss="modal">キャンセル</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
