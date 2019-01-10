@@ -52,6 +52,12 @@ namespace Dsms
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // IIS Option
+            services.Configure<IISOptions>(options =>
+            {
+                options.ForwardClientCertificate = false;
+            });
+
             // ASP.NET Core MVC‚ÅSessionŠÇ—
             // In-Memory
             services.AddDistributedMemoryCache();
@@ -61,7 +67,8 @@ namespace Dsms
                 //options.Cookie.HttpOnly = true;
                 //options.Cookie.Name = ".Fiver.Session";
                 //options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-                options.IdleTimeout = TimeSpan.FromMinutes(1);
+                //options.Cookie.HttpOnly = true;
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
             });
 
             services.AddMvc().AddRazorOptions(options =>
@@ -79,9 +86,6 @@ namespace Dsms
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            // ASP.NET Core MVC‚ÅSessionŠÇ—
-            app.UseSession();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -94,7 +98,9 @@ namespace Dsms
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
+            // ASP.NET Core MVC‚ÅSessionŠÇ—
+            app.UseSession();
+            //app.UseCookiePolicy();
 
             app.UseMvc(routes =>
             {
@@ -106,6 +112,8 @@ namespace Dsms
                     name: "areaRoute",
                     template: "{area=DME001}/{controller=DME001_001}/{action=Init}/{id?}");
             });
+
+            app.UseCookiePolicy();
         }
     }
 }

@@ -21,18 +21,14 @@ namespace Dsms.Filter
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            Enums.Code_ユーザ権限[] aaa = ((ProjecControllerBase)context.Controller).UsableRoles;
+            //
+            ProjecControllerBase controller = (ProjecControllerBase)context.Controller;
+            // 
+            Enums.Code_ユーザ権限[] usableRoles = controller.UsableRoles;
+            string userCd = controller.SessionMan.UserCd;
+            Enums.Code_ユーザ権限 kengen = controller.SessionMan.Kengen;
 
-            string actionName = ((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor).ActionName;
-            string controllerName = ((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor).ControllerName;
-            string userCd = ((ProjecControllerBase)context.Controller).SessionMan.UserCd;
-            string sessionId = ((ProjecControllerBase)context.Controller).SessionMan.SessionId;
-            string gamenId = ((ProjecControllerBase)context.Controller).GamenId;
-            string programId = ((ProjecControllerBase)context.Controller).ProgramId;
-            string usersIpAddress = context.HttpContext.Connection.RemoteIpAddress.ToString();
-
-            //string userCd = context.HttpContext.Session.GetString("CD_USER");
-            if (userCd == null)
+            if (userCd == Constants.STRANGER_USERCD || !((IList<Enums.Code_ユーザ権限>)usableRoles).Contains(kengen))
             {
                 context.Result = new RedirectToRouteResult(
                                 new RouteValueDictionary
