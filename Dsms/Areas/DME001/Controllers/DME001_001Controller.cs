@@ -11,12 +11,13 @@ using Microsoft.AspNetCore.Http;
 using Dsms.ViewModels;
 using Dsms.Business;
 using Dsms.Model;
-//using Dsms.Filter;
+using Dsms.Filter;
 using Dsms.Controller;
 using Dsms.Resource;
 
 namespace Dsms.Controllers
 {
+    [Log]
     public class DME001_001Controller : ProjecControllerBase
     {
         public DME001_001Controller(IOptions<Frap3Core.BCore.ConnectionInfo> connectioninfo) : base(connectioninfo)

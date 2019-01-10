@@ -14,6 +14,11 @@ namespace Dsms.Filter
 {
     public class SessionAttribute : ProjecActionFilterAttributeBase
     {
+        public SessionAttribute()
+        {
+            this.Order = 1;
+        }
+
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             Enums.Code_ユーザ権限[] aaa = ((ProjecControllerBase)context.Controller).UsableRoles;

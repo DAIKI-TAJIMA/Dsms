@@ -12,6 +12,7 @@ using Dsms.Controller;
 
 namespace Dsms.Controllers
 {
+    [Log]
     [Session]
     public class DMT015_001Controller : ProjecControllerBase
     {
