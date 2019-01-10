@@ -254,11 +254,93 @@ namespace Dsms.Resource {
         }
         
         /// <summary>
-        ///    に類似しているローカライズされた文字列を検索します。
+        ///   {0}行目の{1}は必須入力です。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string DME000_0022_E {
             get {
                 return ResourceManager.GetString("DME000_0022_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}行目の{1}は半角英数で入力してください。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0023_E {
+            get {
+                return ResourceManager.GetString("DME000_0023_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}行目の{1}は数値で入力してください。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0024_E {
+            get {
+                return ResourceManager.GetString("DME000_0024_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}行目の{1}は{2}以下で入力してください。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0025_E {
+            get {
+                return ResourceManager.GetString("DME000_0025_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}行目の{1}は存在しません。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0026_E {
+            get {
+                return ResourceManager.GetString("DME000_0026_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   以下エラーのため、一括登録できませんでした。
+        ///{0} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0027_E {
+            get {
+                return ResourceManager.GetString("DME000_0027_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}にはかな文字で入力してください。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0028_E {
+            get {
+                return ResourceManager.GetString("DME000_0028_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}には日付を入力してください。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0029_E {
+            get {
+                return ResourceManager.GetString("DME000_0029_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}には時刻を入力してください。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0030_E {
+            get {
+                return ResourceManager.GetString("DME000_0030_E", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   {0}には半角英字で入力してください。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string DME000_0031_E {
+            get {
+                return ResourceManager.GetString("DME000_0031_E", resourceCulture);
             }
         }
         

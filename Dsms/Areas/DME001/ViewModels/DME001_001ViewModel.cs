@@ -12,14 +12,14 @@ namespace Dsms.ViewModels
         /// <summary>
         /// ユーザコード
         /// </summary>
-        [Required]
+        [Dsms.ValidationAttribute.Required]
         [Display(Name = "ユーザコード")]
         public string UserCd { get; set; }
 
         /// <summary>
         /// パスワード
         /// </summary>
-        [Required]
+        [Dsms.ValidationAttribute.Required]
         [DataType(DataType.Password)]
         [Display(Name = "パスワード")]
         public string Password { get; set; }

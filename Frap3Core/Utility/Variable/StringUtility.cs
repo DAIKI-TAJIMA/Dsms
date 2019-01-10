@@ -203,24 +203,86 @@ namespace Futureinn.Utility.Variable
             return Regex.IsMatch(target, @"^[a-zA-Z ]+$");                  // 2010/09/27 FI MITSUI INS         
         }
 
-		#endregion
+        #endregion
 
-		#region 文字列の全角ひらがなチェック
+        #region 文字列の半角英数字チェック
 
-		///	<summary>
-		///	文字列の全角ひらがなチェック
-		///	</summary>
-		///	<remarks>
-		///	文字列の全角ひらがなチェックを行います。
-		///	<para>作成年月日 2009/06/02</para>
-		///	<para>作成者 (株)フューチャーイン 伊藤 篤史</para>
-		///	<para>修正年月日</para>
-		///	<para>修正者</para>
-		///	<para>修正内容</para>
-		///	</remarks>
-		///	<param name="target">チェック対象の文字列</param>
-		///	<returns>文字列が全角ひらがなの場合はtrue。文字列が全角ひらがな以外、null、空白の場合はfalse。</returns>
-		public static bool IsHiragana(string target)
+        ///	<summary>
+        ///	文字列の半角英数字チェック
+        ///	</summary>
+        ///	<remarks>
+        ///	文字列の半角英数字チェックを行います。
+        ///	<para>作成年月日 2009/06/02</para>
+        ///	<para>作成者 (株)フューチャーイン 伊藤 篤史</para>
+        ///	<para>修正年月日</para>
+        ///	<para>修正者</para>
+        ///	<para>修正内容</para>
+        ///	</remarks>
+        ///	<param name="target">チェック対象の文字列</param>
+        ///	<returns>文字列が半角英数字の場合はtrue。文字列が半角英数字以外、null、空白の場合はfalse。</returns>
+        public static bool IsHankakuEisuji(string target)
+        {
+            //	引数が空白の場合
+            if (StringUtility.IsBrank(target))
+            {
+                //	戻り値設定(チェックNG)
+                return false;
+            }
+
+            //	正規表現の検証結果を返却
+            //return Regex.IsMatch(target, @"^[a-zA-Z]|[ ]+$");             // 2010/09/27 FI MITSUI DEL
+            return Regex.IsMatch(target, @"^[a-zA-Z0-9 ]+$");                  // 2010/09/27 FI MITSUI INS         
+        }
+
+        #endregion
+
+        #region 文字列の半角英数字記号チェック
+
+        ///	<summary>
+        ///	文字列の半角英数字記号チェック
+        ///	</summary>
+        ///	<remarks>
+        ///	文字列の半角英数字記号チェックを行います。
+        ///	<para>作成年月日 2009/06/02</para>
+        ///	<para>作成者 (株)フューチャーイン 伊藤 篤史</para>
+        ///	<para>修正年月日</para>
+        ///	<para>修正者</para>
+        ///	<para>修正内容</para>
+        ///	</remarks>
+        ///	<param name="target">チェック対象の文字列</param>
+        ///	<returns>文字列が半角英数字記号の場合はtrue。文字列が半角英数字記号以外、null、空白の場合はfalse。</returns>
+        public static bool IsHankakuEisukigo(string target)
+        {
+            //	引数が空白の場合
+            if (StringUtility.IsBrank(target))
+            {
+                //	戻り値設定(チェックNG)
+                return false;
+            }
+
+            //	正規表現の検証結果を返却
+            //return Regex.IsMatch(target, @"^[a-zA-Z]|[ ]+$");             // 2010/09/27 FI MITSUI DEL
+            return Regex.IsMatch(target, @"^[a-zA-Z0-9 -/:-@\[-\`\{-\~]+$");                  // 2010/09/27 FI MITSUI INS         
+        }
+
+        #endregion
+
+        #region 文字列の全角ひらがなチェック
+
+        ///	<summary>
+        ///	文字列の全角ひらがなチェック
+        ///	</summary>
+        ///	<remarks>
+        ///	文字列の全角ひらがなチェックを行います。
+        ///	<para>作成年月日 2009/06/02</para>
+        ///	<para>作成者 (株)フューチャーイン 伊藤 篤史</para>
+        ///	<para>修正年月日</para>
+        ///	<para>修正者</para>
+        ///	<para>修正内容</para>
+        ///	</remarks>
+        ///	<param name="target">チェック対象の文字列</param>
+        ///	<returns>文字列が全角ひらがなの場合はtrue。文字列が全角ひらがな以外、null、空白の場合はfalse。</returns>
+        public static bool IsHiragana(string target)
 		{
 			//	引数が空白の場合
 			if (StringUtility.IsBrank(target))
@@ -416,55 +478,55 @@ namespace Futureinn.Utility.Variable
 			return Regex.IsMatch(target, @"(0\d{1,4}-|\(0\d{1,4}\) ?)?\d{1,4}-\d{4}");
 		}
 
-		#endregion
+        #endregion
 
-		//#region 全角文字列変換
+        //#region 全角文字列変換
 
-		/////	<summary>
-		/////	全角文字列変換
-		/////	</summary>
-		/////	<remarks>
-		/////	半角文字列を全角文字列に変換します。
-		/////	<para>作成年月日 2009/06/02</para>
-		/////	<para>作成者 (株)フューチャーイン 伊藤 篤史</para>
-		/////	<para>修正年月日</para>
-		/////	<para>修正者</para>
-		/////	<para>修正内容</para>
-		/////	</remarks>
-		/////	<param name="target">変換対象の文字列</param>
-		/////	<returns>全角文字に変換した文字列を戻します。</returns>
-		//public static string ToZenkaku(string target)
-		//{
-		//	//	引数が空白の場合
-		//	if (StringUtility.IsBrank(target))
-		//	{
-		//		//	引数をそのまま戻します
+        /////	<summary>
+        /////	全角文字列変換
+        /////	</summary>
+        /////	<remarks>
+        /////	半角文字列を全角文字列に変換します。
+        /////	<para>作成年月日 2009/06/02</para>
+        /////	<para>作成者 (株)フューチャーイン 伊藤 篤史</para>
+        /////	<para>修正年月日</para>
+        /////	<para>修正者</para>
+        /////	<para>修正内容</para>
+        /////	</remarks>
+        /////	<param name="target">変換対象の文字列</param>
+        /////	<returns>全角文字に変換した文字列を戻します。</returns>
+        //public static string ToZenkaku(string target)
+        //{
+        //    //	引数が空白の場合
+        //    if (StringUtility.IsBrank(target))
+        //    {
+        //        //	引数をそのまま戻します
 
-		//		return target;
-		//	}
+        //        return target;
+        //    }
 
-		//	//	全角文字列に変換して返却
-		//	return Strings.StrConv(target, VbStrConv.Wide, 0);
-		//}
+        //    //	全角文字列に変換して返却
+        //    return Strings.StrConv(target, VbStrConv.Wide, 0);
+        //}
 
-		//#endregion
+        //#endregion
 
-		#region 空白→null変換
+        #region 空白→null変換
 
-		///	<summary>
-		///	空白→null変換
-		///	</summary>
-		///	<remarks>
-		///	空白をnullに変換します。
-		///	<para>作成年月日 2009/06/02</para>
-		///	<para>作成者 (株)フューチャーイン 伊藤 篤史</para>
-		///	<para>修正年月日</para>
-		///	<para>修正者</para>
-		///	<para>修正内容</para>
-		///	</remarks>
-		///	<param name="target">対象の文字列</param>
-		///	<returns>指定された文字列が空白の場合はnullを戻します。</returns>
-		public static string BlankToNull(string target)
+        ///	<summary>
+        ///	空白→null変換
+        ///	</summary>
+        ///	<remarks>
+        ///	空白をnullに変換します。
+        ///	<para>作成年月日 2009/06/02</para>
+        ///	<para>作成者 (株)フューチャーイン 伊藤 篤史</para>
+        ///	<para>修正年月日</para>
+        ///	<para>修正者</para>
+        ///	<para>修正内容</para>
+        ///	</remarks>
+        ///	<param name="target">対象の文字列</param>
+        ///	<returns>指定された文字列が空白の場合はnullを戻します。</returns>
+        public static string BlankToNull(string target)
 		{
 			//	引数が空白の場合
 			if (StringUtility.IsBrank(target))
@@ -681,7 +743,6 @@ namespace Futureinn.Utility.Variable
 		}
 
 		#endregion
-
 
         #region 文字列の暗号化
 

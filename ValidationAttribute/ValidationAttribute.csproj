@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>Dsms.ValidationAttribute</AssemblyName>
+    <RootNamespace>Dsms.ValidationAttribute</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Frap3Core\Utility\Utility.csproj" />
+    <ProjectReference Include="..\Resource\Resource.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -185,7 +185,35 @@
     <value>ファイルにデータが1件もありません。</value>
   </data>
   <data name="DME000_0022_E" xml:space="preserve">
-    <value />
+    <value>{0}行目の{1}は必須入力です。</value>
+  </data>
+  <data name="DME000_0023_E" xml:space="preserve">
+    <value>{0}行目の{1}は半角英数で入力してください。</value>
+  </data>
+  <data name="DME000_0024_E" xml:space="preserve">
+    <value>{0}行目の{1}は数値で入力してください。</value>
+  </data>
+  <data name="DME000_0025_E" xml:space="preserve">
+    <value>{0}行目の{1}は{2}以下で入力してください。</value>
+  </data>
+  <data name="DME000_0026_E" xml:space="preserve">
+    <value>{0}行目の{1}は存在しません。</value>
+  </data>
+  <data name="DME000_0027_E" xml:space="preserve">
+    <value>以下エラーのため、一括登録できませんでした。
+{0}</value>
+  </data>
+  <data name="DME000_0028_E" xml:space="preserve">
+    <value>{0}にはかな文字で入力してください。</value>
+  </data>
+  <data name="DME000_0029_E" xml:space="preserve">
+    <value>{0}には日付を入力してください。</value>
+  </data>
+  <data name="DME000_0030_E" xml:space="preserve">
+    <value>{0}には時刻を入力してください。</value>
+  </data>
+  <data name="DME000_0031_E" xml:space="preserve">
+    <value>{0}には半角英字で入力してください。</value>
   </data>
   <data name="DME001_0001_E" xml:space="preserve">
     <value>ユーザコード、又は、パスワードが間違っています。</value>

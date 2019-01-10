@@ -35,6 +35,7 @@
     <ProjectReference Include="..\Frap3Core\BCore\BCore.csproj" />
     <ProjectReference Include="..\Model\Model.csproj" />
     <ProjectReference Include="..\Resource\Resource.csproj" />
+    <ProjectReference Include="..\ValidationAttribute\ValidationAttribute.csproj" />
   </ItemGroup>
 
 </Project>

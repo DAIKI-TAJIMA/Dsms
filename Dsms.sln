@@ -21,13 +21,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Busine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{24130AF0-561C-4D4A-8BBE-D334C8C31AC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resource", "Resource\Resource.csproj", "{8EA1295D-0C8C-4878-9D64-7C9E5393672D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Resource", "Resource\Resource.csproj", "{8EA1295D-0C8C-4878-9D64-7C9E5393672D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filter", "Filter\Filter.csproj", "{D348204B-3818-4205-91BE-45855F1D443B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Filter", "Filter\Filter.csproj", "{D348204B-3818-4205-91BE-45855F1D443B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller\Controller.csproj", "{63E75951-8D60-4C00-9B55-59FED2E9B104}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Controller.csproj", "{63E75951-8D60-4C00-9B55-59FED2E9B104}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{942ADE9E-E7A9-4809-827F-F4FFE8310F2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{942ADE9E-E7A9-4809-827F-F4FFE8310F2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationAttribute", "ValidationAttribute\ValidationAttribute.csproj", "{7BDD2A72-2A66-41FB-854B-5337546B7F92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,10 @@ Global
 		{942ADE9E-E7A9-4809-827F-F4FFE8310F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{942ADE9E-E7A9-4809-827F-F4FFE8310F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{942ADE9E-E7A9-4809-827F-F4FFE8310F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BDD2A72-2A66-41FB-854B-5337546B7F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BDD2A72-2A66-41FB-854B-5337546B7F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BDD2A72-2A66-41FB-854B-5337546B7F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BDD2A72-2A66-41FB-854B-5337546B7F92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
